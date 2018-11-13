@@ -1,0 +1,86 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Login</title>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- css files -->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link rel="stylesheet" href="css/fontawesome-all.css">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Nova+Round" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<!-- //web-fonts -->
+</head>
+
+<body>
+	<!-- title -->
+	<h1>
+		<span>F</span>oodify
+		<span>L</span>ogin
+		<span>F</span>orm
+	</h1>
+	<!-- //title -->
+	<!-- content -->
+	<div class="sub-main-w3">
+		<form id="demo" novalidate action="LoginServlet" method="post">
+			<h2>Login Your Account</h2>
+			<div class="form-group">
+				<input type="email" class="form-control textbox" name="email" placeholder="E-mail" required="">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control textbox" name="password" placeholder="Password" required="">
+			</div>
+			<div class="form-group-2">
+                            <input type="Submit" value="Submit">
+                            <a href="Register/index.html" >Register </a>
+			</div>
+		
+		</form>
+		<!-- //switch -->
+	</div>
+	<!-- //content -->
+
+
+	<!-- Jquery -->
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<!-- //Jquery -->
+	<!-- validify plugin -->
+	<script src="js/validify.js"></script>
+	<script>
+		$("#demo").validify({
+			onSubmit: function (e, $this) {
+				$this.find('.alert').removeClass('hidden')
+			},
+			onFormSuccess: function (form) {
+				console.log("Form is valid now!")
+			},
+			onFormFail: function (form) {
+				console.log("Form is not valid :(")
+			}
+		});
+		$("#demo").validify({
+			errorStyle: "validifyError",
+			successStyle: "validifySuccess",
+			emailFieldName: "email",
+			emailCheck: true,
+			requiredAttr: "required",
+		});
+	</script>
+	<!-- //validify plugin -->
+
+</body>
+
+</html>
